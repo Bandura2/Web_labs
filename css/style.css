@@ -143,18 +143,21 @@ body {
     line-height: 150%; 
 }
 
-.email__id {
+.rectangle__email {
     position: absolute;
     top: 278.51px;
     left: 14.55px;  
     width: 423.457px;
-    color: rgba(115, 115, 141, 0.60);
     line-height: 16.66px;
     padding: 12.63px;
-    font-size: 11.089px;
-    font-weight: 700;
     border-radius: 33.96px;
     background: #FFF;
+}
+
+.email_id {
+    color: rgba(115, 115, 141, 0.60);
+    background: #FFF;
+    border: #FFF;
 }
 
 .try_it_for_free_2 {
