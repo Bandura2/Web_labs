@@ -1,0 +1,43 @@
+@import "header.css";
+@import "hero_section.css";
+@import "info_section.css";
+@import "footer.css";
+@import "responsive.css";
+
+html {
+    width: 100%;
+}
+
+body {
+    font-family: Gilroy, sans-serif;
+    padding: 15px;
+}
+
+.site {
+    margin: auto;
+    width: 85%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;    
+}
+
+.container {
+    margin: 0;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    display: block;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+}
