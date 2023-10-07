@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header_ {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    background-color: gray;
+}
+
+.left__buttons {
+    width: 30%;
+    display: flex;
+}
+
+.left__button {
+    font-size: 20px;
+}
+
+.right__buttons {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.right__button {
+    font-size: 20px;
+}
+
+.choose__search-input {
+    margin-right: 20px;
+    width: 50%;
+}
+
+/* HERO */
+
+.hero {
+    width: 100%;
+    display: flex;
+}
+
+.manage__section {
+    width: 20%;
+    height: 500px;
+    background-color: gray;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sort__section,
+.total_weight {
+    display: flex;
+    width: 85%;
+    font-size: 20px;
+    justify-content: space-around;
+    white-space: nowrap;
+}
+
+.count__section {
+    margin-top: 20px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards__section ul {
+    display: flex;
+}
+
+.insect {
+    background-color: aquamarine;
+    width: 170px;
+    height: 250px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+ li {
+    display: block;
+ }
