@@ -3,49 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/Gilroy-Light.otf">
-    <title>LabWork-V10</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Web_lab-3</title>
 </head>
 <body>
-    <div class="site">
-        <div class="container">
-                <div class="header">
-                    <button class="menu_button" type="button" aria-label="close" aria-controls="navigation" aria-expanded="false"></button>
-                    <div class="header__title-items">
-                        <a class="header__title" href="">Relationz</a>
-                        <a href="" class="header__login">Login</a>                    
-                    </div>
-                    
-                    <nav class="header__nav">
-                        <ul>
-                            <li class="header__nav-item"><a href="" class="header__login_2">Login</a></li>
-                            <li class="header__nav-item"><a href="">Services</a></li>
-                            <li class="header__nav-item"><a href="">Enterprise</a></li>
-                            <li class="header__nav-item"><a href="">Pricing</a></li>
-                            <li class="header__nav-item"><button type="button" class="header__try-it_2">Try it for free</button></li>
-                        </ul>
-                    </nav>
+    <div class="header_" >
+        <div class="left__buttons">
+            <button class="left__button" id="my__terrarium">My Terrarium</button>
+            <button class="left__button" id="my__insect">My Insect</button>
+            <button class="left__button" id="create__insect">Create Insect</button>
+        </div>
+        <div class="right__buttons">
+            <input type="text" class="choose__search-input" id="choose__search" placeholder="Type name to search...">
+            <button class="right__button" id="search__button">Search</button>
+            <button class="right__button" id="clear__button">Clear</button>
+        </div>
+    </div>
 
-                    <button type="button" type="button" class="header__try-it">Try it for free</button>
-                </div>
-
-            <div class="hero">
-                <div class="hero__items">
-                    <div class="hero__item-left">
-                        <h1 class="hero__left-main_text">Take your relationships to the next level</h1>
-                        <p class="hero__left-text">The multichannel sales engagement platform which automates personal email outreach, calls, and tasks, while Sales can focus on what really matters - closing deals.</p>
-                        <div class="hero__left-rectangle_email">
-                            <input type="email" placeholder="Email id" class="email_id">
-                            <button type="button" class="hero__try-it">Try it for free</button>
-                        </div>  
-                    </div>
-                    <div class="hero__item-right">
-                        <img src="img/phone__img.svg" alt="" class="hero__img-phone">
-                    </div>
+    <div class="hero">
+        <div class="manage__section">
+            <h1 class="manege__text">Manage insects</h1>
+            <div class="sort__section">
+                <div class="sort-text">Sort insects by speed</div>
+                <button class="sort-button" id="sort_button">Sort</button>
+            </div>
+            <div class="count__section">
+                <div class="count-text">Count total weight</div>
+                <button class="count-botton" id="count_botton">Count</button>
+                <div class="total_weight">
+                    <p class="total_text">Total weight:</p>
+                    <p class="total_weight" id="total_weight"></p>
                 </div>
             </div>
+        </div>
+        <div class="cards__section">
+            <ul>
+                <li class="insect">
+                    <p id="insect_name">Ant</p>
+                    <p id="insect_speed">Speed: 200</p>
+                    <p id="insect_weight">Weight: 50</p>
+                </li>
+                <li class="insect">
+                    <p id="insect_name">Butterfly</p>
+                    <p id="insect_speed">Speed: 25</p>
+                    <p id="insect_weight">Weight: 50</p>
+                </li>
+                <li class="insect">
+                    <p id="insect_name">Bee</p>
+                    <p id="insect_speed">Speed: 35</p>
+                    <p id="insect_weight">Weight: 40</p>
+                </li>
+                <li class="insect">
+                    <p id="insect_name">Mantis</p>
+                    <p id="insect_speed">Speed: 26</p>
+                    <p id="insect_weight">Weight: 30</p>
+                </li>
+                <li class="insect">
+                    <p id="insect_name">Ant</p>
+                    <p id="insect_speed">Speed: 50</p>
+                    <p id="insect_weight">Weight: 60</p>
+                </li>
+                <li class="insect">
+                    <p id="insect_name">Fly</p>
+                    <p id="insect_speed">Speed: 40</p>
+                    <p id="insect_weight">Weight: 100</p>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-    <script src="js/burger.js"></script>
+    <script type="module" src="js/index.js"></script>
 </body>
 </html>
