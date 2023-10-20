@@ -14,3 +14,7 @@
 Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/pull/4)
 
 ***
+### Лабораторна робота №4 (Варіант 10)
+Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/pull/5)
+
+***
