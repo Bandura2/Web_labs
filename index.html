@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Web_lab-3</title>
+    <title>Web_lab-4</title>
 </head>
 <body>
     <div class="header_" >
         <div class="left__buttons">
             <button class="left__button" id="my__terrarium">My Terrarium</button>
             <button class="left__button" id="my__insect">My Insect</button>
-            <button class="left__button" id="create__insect">Create Insect</button>
+            <button class="left__button" id="create__insect_btn">Create Insect</button>
         </div>
         <div class="right__buttons">
             <input type="text" class="choose__search-input" id="choose__search" placeholder="Type name to search...">
@@ -38,38 +38,34 @@
             </div>
         </div>
         <div class="cards__section">
-            <ul>
-                <li class="insect">
-                    <p id="insect_name">Ant</p>
-                    <p id="insect_speed">Speed: 200</p>
-                    <p id="insect_weight">Weight: 50</p>
-                </li>
-                <li class="insect">
-                    <p id="insect_name">Butterfly</p>
-                    <p id="insect_speed">Speed: 25</p>
-                    <p id="insect_weight">Weight: 50</p>
-                </li>
-                <li class="insect">
-                    <p id="insect_name">Bee</p>
-                    <p id="insect_speed">Speed: 35</p>
-                    <p id="insect_weight">Weight: 40</p>
-                </li>
-                <li class="insect">
-                    <p id="insect_name">Mantis</p>
-                    <p id="insect_speed">Speed: 26</p>
-                    <p id="insect_weight">Weight: 30</p>
-                </li>
-                <li class="insect">
-                    <p id="insect_name">Ant</p>
-                    <p id="insect_speed">Speed: 50</p>
-                    <p id="insect_weight">Weight: 60</p>
-                </li>
-                <li class="insect">
-                    <p id="insect_name">Fly</p>
-                    <p id="insect_speed">Speed: 40</p>
-                    <p id="insect_weight">Weight: 100</p>
-                </li>
+            <ul class="cards_ul" id="cards_ul">
             </ul>
+        </div>
+    </div>
+
+    <div id="create_section_id" class="create_section">
+        <div class="create_section_fone">
+            <p class="text_add_insect">Add insect</p>
+            <input type="text" class="insect-input" id="insect_name_in" placeholder="Name">
+            <input type="number" min="0" class="insect-input" id="insect_speed_in" placeholder="Speed">
+            <input type="number" min="0" class="insect-input" id="insect_weight_in" placeholder="Weight">
+            <div class="create_buttons">
+                <button class="cancel_btn" id="cancel_btn">Cancel</button>
+                <button class="submit_btn" id="submit_btn" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit_section_id" class="create_section">
+        <div class="edit_section_fone">
+            <p class="text_add_insect">Edit insect</p>
+            <input type="text" class="insect-input" id="insect_edit_name_in" placeholder="Name">
+            <input type="number" min="0" class="insect-input" id="insect_edit_speed_in" placeholder="Speed">
+            <input type="number" min="0" class="insect-input" id="insect_edit_weight_in" placeholder="Weight">
+            <div class="create_buttons">
+                <button class="cancel_btn" id="cancel_btn_2">Cancel</button>
+                <button class="submit_btn" id="submit_btn_2" type="submit">Submit</button>
+            </div>
         </div>
     </div>
 
