@@ -1,0 +1,16 @@
+{
+  "name": "web_lab_5",
+  "version": "1.0.0",
+  "description": "Five web lab with database",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Nazar Zwarych",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "expres": "^0.0.5",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.2"
+  }
+}
