@@ -18,3 +18,6 @@
 Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/pull/5)
 
 ***
+### Лабораторна робота №5 (Варіант 10)
+Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/tree/five_lab)
+
