@@ -3,19 +3,19 @@
 ## Виконав: Зварич Назар Олегович (Група ІР-22)
 
 ### Лабораторна робота №1 (Варіант 10)
-Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/pull/1))
+Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/tree/first_lab)
 
 ***
 ### Лабораторна робота №2 (Варіант 10)
-Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/pull/2)
+Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/tree/second_lab)
 
 ***
 ### Лабораторна робота №3 (Варіант 10)
-Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/pull/4)
+Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/tree/third_lab)
 
 ***
 ### Лабораторна робота №4 (Варіант 10)
-Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/pull/5)
+Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/tree/fourth_lab)
 
 ***
 ### Лабораторна робота №5 (Варіант 10)
