@@ -19,13 +19,18 @@ const submitButton = document.getElementById("submit_btn");
 const submitEditButton = document.getElementById("submit_btn_2");
 const insectsContainer = document.getElementById("cards_ul");
 const EDIT_BUTTON_ID = "edit_button-";
+const DELETE_BUTTON_ID = "delete_button-";
 
-let nextId = 0;
 let ALLInsects = [];
 let displayedInsects = [];
 
 function generateNextId() {
-  return nextId++;
+  if (ALLInsects.length === 0) {
+    return 0; 
+  } else {
+    const maxId = Math.max(...ALLInsects.map((insect) => insect.id));
+    return maxId + 1; 
+  }
 }
 
 const addInsect = ({ id, name, speed, weight }) => {
@@ -36,11 +41,10 @@ const addInsect = ({ id, name, speed, weight }) => {
     speed,
     weight,
   };
-  
+
   ALLInsects.push(newInsect);
-  displayedInsects.push(newInsect); 
+  displayedInsects.push(newInsect);
   addInsectToPage(newInsect);
-  
 };
 
 const itemTemplate = ({ id, name, speed, weight }) => `
@@ -50,6 +54,7 @@ const itemTemplate = ({ id, name, speed, weight }) => `
       <p id="insect_speed">Speed: ${speed}</p>
       <p id="insect_weight">Weight: ${weight}</p>
       <button id="${EDIT_BUTTON_ID}${id}" class="edit-button" data-id="${id}">Edit</button>
+      <button id="${DELETE_BUTTON_ID}${id}" class="delete-button" data-id="${id}">Delete</button>
     </div>
   </li>
 `;
@@ -58,14 +63,18 @@ const addInsectToPage = (insect) => {
   insectsContainer.insertAdjacentHTML("beforeend", itemTemplate(insect));
 
   const editButton = document.getElementById(`${EDIT_BUTTON_ID}${insect.id}`);
-  // editButton.removeEventListener("click", openEditMenu);
+  const deleteButton = document.getElementById(`${DELETE_BUTTON_ID}${insect.id}`);
+
   editButton.addEventListener("click", () => {
     openEditMenu(insect.id);
+  });
+  deleteButton.addEventListener("click", () => {
+    openDeleteMenu(insect.id);
   });
 };
 
 submitButton.addEventListener("click", () => {
-  
+
   const name = nameInput.value;
   const speed = speedInput.value;
   const weight = weightInput.value;
@@ -79,16 +88,34 @@ submitButton.addEventListener("click", () => {
     alert("Numeric fields can not be less than or equal to 0.");
 
   } else {
-    addInsect({
-    id: generateNextId(),
-    name,
-    speed,
-    weight,
-  });
 
-  nameInput.value = '';
-  speedInput.value = '';
-  weightInput.value = '';
+    const newInsect = {
+      id: generateNextId(),
+      name,
+      speed,
+      weight,
+    };
+
+    addInsect(newInsect);
+
+    fetch("http://localhost:3000/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newInsect),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        alert(result.message);
+      })
+      .catch((error) => {
+        console.error("Помилка при відправці POST-запиту: " + error);
+      });
+
+    nameInput.value = '';
+    speedInput.value = '';
+    weightInput.value = '';
   }
 });
 
@@ -146,7 +173,40 @@ function openEditMenu(insectId) {
       editInsect(insectToEdit, insectId);
     };
   }
-}
+};
+
+function openDeleteMenu(insectId) {
+  const insectToDelete = displayedInsects.find((insect) => insect.id === insectId);
+  if (insectToDelete) {
+    deleteInsect(insectId);
+  }
+};
+
+function deleteInsect(insectId) {
+
+  fetch('http://localhost:3000/delete', {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ id: insectId }),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      if (result.message == 'insect deleted') {
+
+        ALLInsects = ALLInsects.filter((insect) => insect.id !== insectId);
+        displayedInsects = displayedInsects.filter((insect) => insect.id !== insectId);
+        renderItemsList(displayedInsects);
+      } else {
+        console.error('Error deleting:', result.message);
+      }
+    })
+    .catch((error) => {
+      console.error('Помилка при відправці DELETE-запиту:', error);
+    });
+};
+
 
 function editInsect(insectToEdit, insectId) {
 
@@ -164,12 +224,43 @@ function editInsect(insectToEdit, insectId) {
 
   } else {
 
-  insectToEdit.name = newName;
-  insectToEdit.speed = newSpeed;
-  insectToEdit.weight = newWeight;
-  renderItemsList(displayedInsects);
-  editMenu.style.display = "none";
+    insectToEdit.name = newName;
+    insectToEdit.speed = newSpeed;
+    insectToEdit.weight = newWeight;
+
+    fetch('http://localhost:3000/update', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(insectToEdit)
+    })
+      .then(response => response.json())
+      .then(result => {
+        alert('Обєкт оновлено в базі даних.');
+      })
+      .catch(error => {
+        console.error('Помилка оновлення:', error);
+      });
+
+    renderItemsList(displayedInsects);
+    editMenu.style.display = "none";
   }
 };
+
+function get_all_from_db() {
+  fetch("http://localhost:3000/getall")
+    .then((response) => response.json())
+    .then((data) => {
+      data.data.forEach((insect) => {
+        addInsect(insect);
+      });
+    })
+    .catch((error) => {
+      console.error("Error fetching data from the database: " + error);
+    });
+}
+
+get_all_from_db();
 
 renderItemsList(displayedInsects);
