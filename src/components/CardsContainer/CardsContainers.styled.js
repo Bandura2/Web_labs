@@ -12,6 +12,7 @@ const ImageInsectContainer = styled.div`
   border-radius: 5px;
   margin-bottom: 100px;
   width: 350px;
+  height: auto;
   border: 1.5px solid black;
 `;
 
@@ -24,25 +25,50 @@ const CardContainer = styled.div`
 `;
 
 const ImageInsect = styled.img`
-  max-width: 340px;
-  height: auto;
+  width: 340px;
+  height: 220px;
+`;
+
+const TextName = styled.p`
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  font-size: 22px;
 `;
 
 const Text = styled.p`
   color: black;
-  margin-top: 10px;
-  padding: 0 5px;
+  max-height: auto;
+  margin-top: -10px;
   text-align: center;
   font-size: 18px;
 `;
 
-const TextName= styled.p`
+const Type = styled.p`
   color: black;
   margin-top: 10px;
   padding: 0 5px;
   text-align: center;
-  font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
 `;
 
-export { ImageInsectContainer, CardContainer, ImageInsect, Text, TextName };
+const ViewMoreBut = styled.div`
+  button{
+    white-space: nowrap;
+    text-decoration: none;
+    background-color: darkgreen;
+    color: yellow;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }:active {
+    color: black;
+  }
+
+  padding-bottom: 70px;
+`;
+
+export { ImageInsectContainer, CardContainer, ImageInsect, Text, TextName, Type, ViewMoreBut };

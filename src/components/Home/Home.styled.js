@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const HomeContainer = styled.div`
   background-color: #979797;
   display: flex;
-  padding: 20px;
+  padding: 25px;
 `;
 
 const HomeImage = styled.img`
@@ -38,4 +38,23 @@ const HomeText = styled.p`
   margin-left: 50px;
 `;
 
-export { HomeContainer, HomeImage, HomeText, HomeTitle, HomeContent };
+const ViewMoreBut = styled.div`
+  button{
+    white-space: nowrap;
+    text-decoration: none;
+    background-color: darkgreen;
+    color: yellow;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }:active {
+    color: black;
+  }
+
+  padding-bottom: 70px;
+`;
+
+export { HomeContainer, HomeImage, HomeText, HomeTitle, HomeContent, ViewMoreBut };

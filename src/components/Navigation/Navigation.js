@@ -1,13 +1,15 @@
 import React from "react";
 import { Nav } from "./Navigation.style";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
-    return (
+  const location = useLocation();
+  return (
         <Nav>
         <ul>
-          <li><a href="/" className='homePage'>Home</a></li>
-          <li><a href="/">Catalog</a></li>
-          <li><a href="/">Cart</a></li>
+          <li><Link to="/" className={location.pathname === '/' ? 'homePage active' : 'homePage'}>Home</Link></li>
+          <li><Link to="/catalog" className={location.pathname === '/catalog' ? 'active' : ''}>Catalog</Link></li>
+          <li><Link to="/cart" className={location.pathname === '/cart' ? 'active' : ''}>Cart</Link></li>
         </ul>
         </Nav>
     )

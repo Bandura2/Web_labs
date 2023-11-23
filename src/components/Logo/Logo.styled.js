@@ -21,9 +21,9 @@ const Logotype = styled.div`
 
   .LogoName {
     display: block;
-    padding-top: 10px;
     margin-left: 30px;
     font-size: 28px;
+    padding-bottom: 10px;
   }`;
 
   export { Logotype };

@@ -7,7 +7,7 @@ const Nav = styled.nav`
     display: flex;
   }
 
-  .homePage {
+  .active {
     border-radius: 10px;
     border: 2px solid yellow;
   }
