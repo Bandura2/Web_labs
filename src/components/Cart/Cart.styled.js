@@ -53,8 +53,9 @@ const Buttons = styled.div`
   margin-left: 40px;
   p {
     width: 35px;
+    text-align: center;
   }
-  a {
+  button {
     width: 43px;
     height: 43px;
     font-size: 30px;

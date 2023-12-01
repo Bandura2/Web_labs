@@ -34,13 +34,14 @@ const ImageInsect = styled.img`
 const BottomCountainer = styled.div`
     display: flex;
     justify-content: space-around;
+    align-items: baseline;
 
     p {
         margin-top: -15px;
         font-size: 26px;
     }
 
-    button{
+    .greenButton {
         white-space: nowrap;
         background-color: darkgreen;
         color: yellow;
@@ -51,6 +52,7 @@ const BottomCountainer = styled.div`
         justify-content: center;
         max-width: 140px;
         max-height: 55px;
+        text-decoration: none;
     }:active {
         color: black;
     }

@@ -5,7 +5,6 @@ import { Button, Modal, Space, InputNumber } from "antd";
 import { useDispatch } from 'react-redux';
 
 
-
 const ViewMoreInf = ({ item }) => {
     const { id, name, price, description, type, image_name } = item;
 
@@ -69,10 +68,10 @@ const ViewMoreInf = ({ item }) => {
                         <h4>Count:</h4>
                         <InputNumber min={1} value={count} onChange={setValue} style={{ backgroundColor: "#979797" }} />
                     </Space>
-                    <Link to={`/catalog`} style={{ textDecoration: "none" }}>
-                        <button>Close</button>
+                    <Link to={`/catalog`} style={{ textDecoration: "none" }} className="greenButton" >
+                        Close
                     </Link>
-                    <button onClick={addInsect}>Add To Card</button>
+                    <Link to={``} className="greenButton" onClick={addInsect}>Add To Card</Link>
                 </BottomCountainer>
             </ViewMoreInfo>
             <Modal
@@ -84,7 +83,7 @@ const ViewMoreInf = ({ item }) => {
                     <NavLink key="back" to="/cart">
                         <Button onClick={handleReaction}>To Cart</Button>
                     </NavLink>,
-                    <Button key="continue" type="primary" onClick={handleReaction} style={{ marginLeft: "20px" }}>
+                    <Button key="continue" type="primary" onClick={handleReaction} style={{ marginLeft: "20px", backgroundColor: "darkgreen" }}>
                         Continue
                     </Button>
                 ]}>

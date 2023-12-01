@@ -1,12 +1,12 @@
-const defaultState = {
-    insectsList: [],
-};
+// const defaultState = {
+//     insectsList: [],
+// };
 
 const findIndexByName = (arr, name) => {
     return arr.findIndex((item) => item.name === name);
 };
 
-const reducer = (state = defaultState, action) => {
+export const reducer = (state, action) => {
     switch (action.type) {
         case "ADD_INSECT":
             const indexByName = findIndexByName(state.insectsList, action.payLoad.name);
@@ -44,5 +44,3 @@ const reducer = (state = defaultState, action) => {
             return state;
     }
 };
-
-export default reducer;

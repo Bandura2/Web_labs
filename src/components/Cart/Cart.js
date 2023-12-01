@@ -7,6 +7,7 @@ import { CartCountainer, InsectImage, Price, CardInCart, Buttons, DivForPrice } 
 
 
 const Cart = () => {
+    const dispatch = useDispatch();
     const insectsArray = useSelector((state) => state.insectsList);
     const [totalPrice, setTotalPrice] = useState(0);
 
@@ -17,7 +18,6 @@ const Cart = () => {
         });
         setTotalPrice(totalPrice);
     }, [insectsArray]);
-    const dispatch = useDispatch();
 
     const handleIncrement = (name) => {
         dispatch(incrementCount(name));
@@ -48,9 +48,9 @@ const Cart = () => {
                             <h3>{item.name}</h3>
                             <Price>Price: {item.price}</Price>
                             <Buttons>
-                                <a onClick={() => handleDecrement(item.name)}>-</a>
+                                <button onClick={() => handleDecrement(item.name)}>-</button>
                                 <p>{item.count}</p>
-                                <a onClick={() => handleIncrement(item.name)}>+</a>
+                                <button onClick={() => handleIncrement(item.name)}>+</button>
                             </Buttons>
                         </CardInCart>
                     </div>
