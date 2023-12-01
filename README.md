@@ -36,3 +36,8 @@
 ***
 ### Лабораторна робота №9 (Варіант 10)
 Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/tree/lab9)
+
+***
+### Лабораторна робота №10 (Варіант 10)
+Посилання на вітку [тут](https://github.com/Bandura2/Web_labs/tree/lab10)
+
